@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule }  from '@angular/router';
 import { HttpModule }  from '@angular/http';
-
+import { MaterialModule } from '@angular/material';
 import { UsersComponent } from './users.component';
 import { UsersService } from './shared/users.service';
 import { UserFormComponent } from './user-form/user-form.component';
@@ -14,7 +14,8 @@ import { UserFormComponent } from './user-form/user-form.component';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    HttpModule
+    HttpModule,
+    MaterialModule.forRoot()
   ],
   declarations: [
     UsersComponent,

@@ -1,8 +1,22 @@
-<nav>
-  <div class="nav-wrapper">
-    <a routerLink="" class="brand-logo">Angular 2 CRUD</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a routerLink="/users" routerLinkActive="active">Users</a></li>
-    </ul>
-  </div>
-</nav>
+<md-toolbar color="primary">
+
+    <button md-button routerLink="/">
+    <md-icon>home</md-icon> 
+        {{title}}</button>
+
+    <!-- This fills the remaining space of the current row -->
+    <span class="fill-remaining-space"></span>
+    <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+        <button md-button routerLink="/dashboard"><md-icon>dashboard</md-icon>Dashboard</button>
+        <button md-button routerLink="/users"><md-icon>account_circle</md-icon>Users</button>
+    </div>
+    <button md-button [md-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
+     <md-icon>menu</md-icon>
+    </button>
+
+</md-toolbar>
+<md-menu x-position="before" #menu="mdMenu">
+    <button md-menu-item routerLink="/dashboard">Dashboard</button>
+    <button md-menu-item routerLink="/users">Users</button>
+    <!--<button md-menu-item>Help</button>-->
+</md-menu>
